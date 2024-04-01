@@ -19,15 +19,19 @@ public class Usuario implements Serializable{
     private ArrayList<Cartas> inventario = new ArrayList<>(30);
     private Queue<Cartas> deck = new LinkedList<Cartas>();
 
-    public Usuario() {
-    }
-
-    public Usuario(String nome, String email, String senha, int raca) {
+    public Usuario(String nome, String email, String senha, int raca, ArrayList<Cartas> inventario,Queue<Cartas> deck) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
         this.raca = raca;
+        this.inventario = inventario;
+        this.deck = deck;
     }
+
+    public Usuario() {
+    }
+    
+    
 
     public String getNome() {
         return nome;

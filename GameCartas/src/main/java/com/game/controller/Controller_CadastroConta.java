@@ -6,6 +6,7 @@ package com.game.controller;
 
 import com.game.gui.Cadastro_Conta;
 import com.game.gui.Login;
+import com.game.model.Cartas;
 import com.game.model.Usuario;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,8 +14,12 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.management.Query;
 import javax.swing.JOptionPane;
 
 /**
@@ -54,7 +59,13 @@ public class Controller_CadastroConta implements ActionListener {
             FileOutputStream arquivo = new FileOutputStream("Conta");
             ObjectOutputStream out = new ObjectOutputStream(arquivo);
 
-            Usuario conta = new Usuario(this.cad.getTxt_Usuario().getText(), this.cad.getTxt_Email().getText(), String.valueOf(this.cad.getTxt_Senha2().getText()), this.cad.getCbox_Raca().getSelectedIndex());
+            Usuario conta = new Usuario(
+                    this.cad.getTxt_Usuario().getText(),
+                    this.cad.getTxt_Email().getText(), 
+                    String.valueOf(this.cad.getTxt_Senha2().getText()), 
+                    this.cad.getCbox_Raca().getSelectedIndex(),
+                    null,
+                    this.gerarCartasIniciais());
 
             Controller_Main.contas.add(conta);
             out.writeObject(Controller_Main.contas);
@@ -71,6 +82,20 @@ public class Controller_CadastroConta implements ActionListener {
         }
     }
 
+    private Queue gerarCartasIniciais(){
+        Random random = new Random();
+        Queue<Cartas> deck = new LinkedList<Cartas>();
+        for (int i = 0; i < 3; i++) {
+        int id = random.nextInt(Controller_Main.cartas.size());
+            for (Cartas cart : Controller_Main.cartas) {
+                if(id == cart.getId()){
+                    deck.offer(cart);
+                }
+            }
+        }
+        return deck;
+    }
+    
     private void tratamento() {
         if (this.validUsuario()) {
             if (this.validSenha()) {
