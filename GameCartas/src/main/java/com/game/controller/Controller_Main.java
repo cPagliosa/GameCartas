@@ -24,7 +24,7 @@ public class Controller_Main {
         
         janela = new Janela();
         janela.setVisible(true);
-        janela.setSize(1500, 800);
+        janela.setSize(1200, 720);
         janela.setLocationRelativeTo(null);
         janela.setLayout(new BorderLayout());
         this.trocarTelas(controller_login.getLog());
