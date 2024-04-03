@@ -5,6 +5,7 @@ import com.game.gui.Login;
 import com.game.model.Usuario;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,6 +15,7 @@ public class Controller_Login implements ActionListener {
 
     private Login log = new Login();
     private Controller_CadastroConta cad;
+    private ControllerMapa mundi;
 
     //Construtor da tela
     public Controller_Login() {
@@ -29,12 +31,23 @@ public class Controller_Login implements ActionListener {
     }
 
     private void entrar() {
+        boolean usuNaoEncontrado = false;
         for (Usuario usu : Controller_Main.contas) {
             if (this.log.getTxt_Username().getText().equals(usu.getEmail())) {
                 if (this.log.getTxt_Senha().getText().equals(usu.getSenha())) {
-
+                    mundi = new ControllerMapa(usu);
+                    Main.main.trocarTelas(mundi.getMundi());
+                    usuNaoEncontrado = false;
+                } else {
+                    usuNaoEncontrado = true;
                 }
+            } else {
+              usuNaoEncontrado = true;
+
             }
+        }
+        if(usuNaoEncontrado){
+             JOptionPane.showMessageDialog(null, "Email e senha Invalidos!!", "Erro Login", JOptionPane.ERROR_MESSAGE);
         }
     }
 
