@@ -61,8 +61,8 @@ public class Controller_CadastroConta implements ActionListener {
 
             Usuario conta = new Usuario(
                     this.cad.getTxt_Usuario().getText(),
-                    this.cad.getTxt_Email().getText(), 
-                    String.valueOf(this.cad.getTxt_Senha2().getText()), 
+                    this.cad.getTxt_Email().getText(),
+                    String.valueOf(this.cad.getTxt_Senha2().getText()),
                     this.cad.getCbox_Raca().getSelectedIndex(),
                     null,
                     this.gerarCartasIniciais());
@@ -82,40 +82,40 @@ public class Controller_CadastroConta implements ActionListener {
         }
     }
 
-    private Queue gerarCartasIniciais(){
+    private Queue gerarCartasIniciais() { //1
         Random random = new Random();
         Queue<Cartas> deck = new LinkedList<Cartas>();
-        for (int i = 0; i < 3; i++) {
-        int id = random.nextInt(Controller_Main.cartas.size());
-            for (Cartas cart : Controller_Main.cartas) {
-                if(id == cart.getId()){
+        for (int i = 0; i < 3; i++) { //1
+            int id = random.nextInt(Controller_Main.cartas.size());
+            for (Cartas cart : Controller_Main.cartas) { //1
+                if (id == cart.getId()) { //1
                     deck.offer(cart);
                 }
             }
         }
         return deck;
     }
-    
-    private void tratamento() {
-        if (this.validUsuario()) {
-            if (this.validSenha()) {
-                if (this.validEmail(this.cad.getTxt_Email().getText())) {
-                    int resposta = JOptionPane.showInternalConfirmDialog(null, "Voce tem certeza que quer salvar com estes daods?\nUsuario: "+this.cad.getTxt_Usuario().getText()+"\nSenha: "+this.cad.getTxt_Senha2().getText()+"\nEmail: "+this.cad.getTxt_Email().getText()+"\nraca: "+String.valueOf(this.cad.getCbox_Raca().getSelectedItem()));
+
+    private void tratamento() { //1
+        if (this.validUsuario()) { //1
+            if (this.validSenha()) { // 1
+                if (this.validEmail(this.cad.getTxt_Email().getText())) { //1
+                    int resposta = JOptionPane.showInternalConfirmDialog(null, "Voce tem certeza que quer salvar com estes daods?\nUsuario: " + this.cad.getTxt_Usuario().getText() + "\nSenha: " + this.cad.getTxt_Senha2().getText() + "\nEmail: " + this.cad.getTxt_Email().getText() + "\nraca: " + String.valueOf(this.cad.getCbox_Raca().getSelectedItem()));
 // Verificar qual botão foi pressionado pelo usuário
-                    if (resposta == JOptionPane.YES_OPTION) {
+                    if (resposta == JOptionPane.YES_OPTION) { //1
                         // O usuário clicou em "Sim" ou "OK"
                         this.salvar();
-                    } else if (resposta == JOptionPane.NO_OPTION) {
+                    } else if (resposta == JOptionPane.NO_OPTION) { //1
                         // O usuário clicou em "Não"
                         this.limpar();
-                    } else if (resposta == JOptionPane.CANCEL_OPTION) {
+                    } else if (resposta == JOptionPane.CANCEL_OPTION) { //1
                         // O usuário clicou em "Cancelar"
                         this.limpar();
-                    } else if (resposta == JOptionPane.CLOSED_OPTION) {
+                    } else if (resposta == JOptionPane.CLOSED_OPTION) {//1
                         // O usuário fechou a caixa de diálogo sem fazer uma escolha
                         this.limpar();
                     }
-                    
+
                 } else {
                     JOptionPane.showMessageDialog(null, "Email invalido", "Erro Email", JOptionPane.ERROR_MESSAGE);
                 }
@@ -123,8 +123,8 @@ public class Controller_CadastroConta implements ActionListener {
         }
     }
 
-    private boolean validUsuario() {
-        if (this.cad.getTxt_Usuario().getText().length() >= 3 && this.cad.getTxt_Usuario().getText().length() <= 12) {
+    private boolean validUsuario() { //1
+        if (this.cad.getTxt_Usuario().getText().length() >= 3 && this.cad.getTxt_Usuario().getText().length() <= 12) { //2
             return true;
         } else {
             JOptionPane.showMessageDialog(null, "Usuario invalido", "Erro Usuario", JOptionPane.ERROR_MESSAGE);
@@ -132,9 +132,9 @@ public class Controller_CadastroConta implements ActionListener {
         }
     }
 
-    private boolean validSenha() {
-        if (this.cad.getTxt_Senha1().getText().length() >= 3) {
-            if (this.cad.getTxt_Senha1().getText().equals(this.cad.getTxt_Senha2().getText())) {
+    private boolean validSenha() { //1
+        if (this.cad.getTxt_Senha1().getText().length() >= 3) { //1
+            if (this.cad.getTxt_Senha1().getText().equals(this.cad.getTxt_Senha2().getText())) { //1
                 return true;
             } else {
                 JOptionPane.showMessageDialog(null, "Senhas nao identicas", "Erro Senha", JOptionPane.ERROR_MESSAGE);
@@ -153,14 +153,14 @@ public class Controller_CadastroConta implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == this.cad.getBtn_Limpar()) {
+    public void actionPerformed(ActionEvent e) { //1
+        if (e.getSource() == this.cad.getBtn_Limpar()) { //1
             this.limpar();
-        } else if (e.getSource() == this.cad.getBtn_Entrar()) {
+        } else if (e.getSource() == this.cad.getBtn_Entrar()) { //1
             this.tratamento();
-        }else if (e.getSource() == this.cad.getBtn_Voltar()) {
+        } else if (e.getSource() == this.cad.getBtn_Voltar()) { //1
             log = new Controller_Login();
-             Main.main.trocarTelas(log.getLog());
+            Main.main.trocarTelas(log.getLog());
         }
     }
 

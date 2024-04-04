@@ -33,7 +33,7 @@ public class Controller_Main {
         
     }
     
-    private void carregarDados(){
+    private void carregarDados(){ 
         try {
             
             FileInputStream arquivo = new FileInputStream("Conta");
@@ -49,7 +49,7 @@ public class Controller_Main {
         }
     }
     
-    protected void trocarTelas(JPanel painel) {
+    protected void trocarTelas(JPanel painel) { 
 
         janela.getContentPane().removeAll();
         janela.add(painel, BorderLayout.CENTER);
