@@ -15,7 +15,7 @@ public class Controller_Lateral implements ActionListener {
     private Controller_Login log;
     private ControllerMapa map;
     private Usuario usu;
-
+//cc
     public Controller_Lateral(Usuario usu) {
         this.GerenciamentoNivel();
         this.blr.getLbl_Username().setText(usu.getNome());
