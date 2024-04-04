@@ -18,6 +18,7 @@ public class Controller_Main {
     private Controller_Login controller_login = new Controller_Login();
     public static LinkedList<Usuario> contas = new LinkedList<>();
     public static LinkedList<Cartas> cartas = new LinkedList<>();
+    public static int nivel=0;
     Cartas car = new Cartas();
     
     protected void start(){
@@ -50,10 +51,16 @@ public class Controller_Main {
     }
     
     protected void trocarTelas(JPanel painel) {
-
         janela.getContentPane().removeAll();
         janela.add(painel, BorderLayout.CENTER);
         janela.pack();
 
+    }
+    
+    protected void trocaGame(JPanel p1,JPanel p2){
+        janela.getContentPane().removeAll();
+        janela.add(p1, BorderLayout.WEST);
+        janela.add(p2, BorderLayout.CENTER);
+        janela.pack();
     }
 }

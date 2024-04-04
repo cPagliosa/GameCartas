@@ -38,13 +38,12 @@ public class MapaMundi extends javax.swing.JPanel {
         };
         btn_Nivel1 = new javax.swing.JButton();
 
-        setMaximumSize(new java.awt.Dimension(1200, 720));
-        setMinimumSize(new java.awt.Dimension(1200, 720));
-        setPreferredSize(new java.awt.Dimension(1200, 720));
+        setMaximumSize(new java.awt.Dimension(1000, 720));
+        setMinimumSize(new java.awt.Dimension(1000, 720));
+        setPreferredSize(new java.awt.Dimension(1000, 720));
 
         jDesktopPane1.setMaximumSize(new java.awt.Dimension(1200, 720));
         jDesktopPane1.setMinimumSize(new java.awt.Dimension(1200, 720));
-        jDesktopPane1.setPreferredSize(new java.awt.Dimension(1200, 720));
 
         btn_Nivel1.setBackground(new java.awt.Color(96, 153, 102));
         btn_Nivel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -58,16 +57,16 @@ public class MapaMundi extends javax.swing.JPanel {
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(367, 367, 367)
+                .addGap(289, 289, 289)
                 .addComponent(btn_Nivel1)
-                .addContainerGap(743, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                .addContainerGap(563, Short.MAX_VALUE)
+                .addContainerGap(568, Short.MAX_VALUE)
                 .addComponent(btn_Nivel1)
-                .addGap(125, 125, 125))
+                .addGap(120, 120, 120))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -75,8 +74,8 @@ public class MapaMundi extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,7 +85,7 @@ public class MapaMundi extends javax.swing.JPanel {
                 .addGap(19, 19, 19))
         );
 
-        getAccessibleContext().setAccessibleName("1200");
+        getAccessibleContext().setAccessibleName("1000");
         getAccessibleContext().setAccessibleDescription("720");
     }// </editor-fold>//GEN-END:initComponents
 

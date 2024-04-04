@@ -57,6 +57,7 @@ public class Login extends javax.swing.JPanel {
         txt_Username.setBackground(new java.awt.Color(96, 153, 102));
         txt_Username.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txt_Username.setForeground(new java.awt.Color(237, 241, 214));
+        txt_Username.setText("caio@gmail.com");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(237, 241, 214));
@@ -66,6 +67,7 @@ public class Login extends javax.swing.JPanel {
         txt_Senha.setBackground(new java.awt.Color(96, 153, 102));
         txt_Senha.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txt_Senha.setForeground(new java.awt.Color(237, 241, 214));
+        txt_Senha.setText("1111");
 
         btn_Cadastro.setBackground(new java.awt.Color(96, 153, 102));
         btn_Cadastro.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N

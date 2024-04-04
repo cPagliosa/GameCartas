@@ -16,6 +16,7 @@ public class Controller_Login implements ActionListener {
     private Login log = new Login();
     private Controller_CadastroConta cad;
     private ControllerMapa mundi;
+    private Controller_Lateral blr;
 
     //Construtor da tela
     public Controller_Login() {
@@ -36,18 +37,19 @@ public class Controller_Login implements ActionListener {
             if (this.log.getTxt_Username().getText().equals(usu.getEmail())) {
                 if (this.log.getTxt_Senha().getText().equals(usu.getSenha())) {
                     mundi = new ControllerMapa(usu);
-                    Main.main.trocarTelas(mundi.getMundi());
+                    blr = new Controller_Lateral(usu);
+                    Main.main.trocaGame(blr.getBlr(), mundi.getMundi());
                     usuNaoEncontrado = false;
                 } else {
                     usuNaoEncontrado = true;
                 }
             } else {
-              usuNaoEncontrado = true;
+                usuNaoEncontrado = true;
 
             }
         }
-        if(usuNaoEncontrado){
-             JOptionPane.showMessageDialog(null, "Email e senha Invalidos!!", "Erro Login", JOptionPane.ERROR_MESSAGE);
+        if (usuNaoEncontrado) {
+            JOptionPane.showMessageDialog(null, "Email e senha Invalidos!!", "Erro Login", JOptionPane.ERROR_MESSAGE);
         }
     }
 
