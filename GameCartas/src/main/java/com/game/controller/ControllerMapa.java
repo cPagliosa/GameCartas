@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.game.controller;
 
 import com.game.gui.MapaMundi;
@@ -36,6 +32,7 @@ public class ControllerMapa implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.mundi.getBtn_Nivel1()) {
+            Controller_Main.nivel = 1;
             nivel1 = new Controller_Nivel1();
             blr = new Controller_Lateral(jogador);
             Main.main.trocaGame(blr.getBlr(), nivel1.getNiv());

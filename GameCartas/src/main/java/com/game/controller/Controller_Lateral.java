@@ -17,6 +17,7 @@ public class Controller_Lateral implements ActionListener {
     private Usuario usu;
 
     public Controller_Lateral(Usuario usu) {
+        this.GerenciamentoNivel();
         this.blr.getLbl_Username().setText(usu.getNome());
         this.usu = usu;
 
@@ -28,15 +29,27 @@ public class Controller_Lateral implements ActionListener {
 
     }
 
+    private void GerenciamentoNivel() {
+        if (Controller_Main.nivel == 0) {
+            this.blr.getBtn_Sair().setText("Sair");
+        } else {
+            this.blr.getBtn_Sair().setText("Voltar");
+        }
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.blr.getBtn_Sair()) {
-            if (this.blr.getBtn_Sair().getText().equals("Sair")) {
+            if (this.blr.getBtn_Sair().getText() == "Sair") {
+                this.GerenciamentoNivel();
+                Controller_Main.nivel = 0;
                 log = new Controller_Login();
                 Main.main.trocarTelas(log.getLog());
             } else {
+                Controller_Main.nivel = 0;
                 map = new ControllerMapa(usu);
-                Main.main.trocarTelas(map.getMundi());
+                this.GerenciamentoNivel();
+                Main.main.trocaGame(blr, map.getMundi());
             }
 
         } else if (e.getSource() == this.blr.getBtn_Inv()) {

@@ -37,18 +37,19 @@ public class Nivel1 extends javax.swing.JPanel {
             }
         };
 
-        setMaximumSize(new java.awt.Dimension(1200, 720));
-        setMinimumSize(new java.awt.Dimension(1200, 720));
-        setPreferredSize(new java.awt.Dimension(1200, 720));
+        setMaximumSize(new java.awt.Dimension(1000, 720));
+        setMinimumSize(new java.awt.Dimension(1000, 720));
+        setPreferredSize(new java.awt.Dimension(1000, 720));
 
-        jDesktopPane1.setMaximumSize(new java.awt.Dimension(1200, 720));
-        jDesktopPane1.setMinimumSize(new java.awt.Dimension(1200, 720));
+        jDesktopPane1.setMaximumSize(new java.awt.Dimension(1000, 720));
+        jDesktopPane1.setMinimumSize(new java.awt.Dimension(1000, 720));
+        jDesktopPane1.setPreferredSize(new java.awt.Dimension(1000, 720));
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1200, Short.MAX_VALUE)
+            .addGap(0, 1000, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -71,7 +72,7 @@ public class Nivel1 extends javax.swing.JPanel {
                 .addGap(19, 19, 19))
         );
 
-        getAccessibleContext().setAccessibleName("1200");
+        getAccessibleContext().setAccessibleName("1000");
         getAccessibleContext().setAccessibleDescription("720");
     }// </editor-fold>//GEN-END:initComponents
 
