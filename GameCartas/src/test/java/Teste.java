@@ -12,10 +12,11 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author LaisVarela
  */
 public class Teste {
+
     private Usuario user;
-    
+
     public Teste() {
-        user.setNome("joao");
+        user = new Usuario();
     }
 
     @BeforeAll
@@ -36,6 +37,7 @@ public class Teste {
 
     @Test
     public void checaNomeJoao() {
-        assertEquals(user.getNome(),"joao");
+        user.setNome("joao");
+        assertEquals(user.getNome(), "joao");
     }
 }
