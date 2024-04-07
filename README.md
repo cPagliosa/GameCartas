@@ -1,11 +1,5 @@
 # GameCartas
-# Este projeto é um jogo de cartas customizado, ou seja, cartas com personagens especiais, sendo que cada carta é única 
-e identificada por uma série de informações como id, nome da carta, 
-tipo (ataque de curto alcance, ataque de longo alcance ou defesa), dano de ataque, quantidade de vida, bonus e custo. 
-Essas cartas ficam disponíveis para o jogador e é possível escolher individualmente e montar um deck para jogar 
-contra um NPC (um personagem não jogável). 
-O objetivo do jogo é que o jogador consiga um conjunto de cartas fortes o suficiente para derrotar 
-o NPC mais forte, vencendo todos os níveis disponíveis no jogo. 
+# Este projeto é um jogo de cartas customizado, ou seja, cartas com personagens especiais, sendo que cada carta é única e identificada por uma série de informações como id, nome da carta, tipo (ataque de curto alcance, ataque de longo alcance ou defesa), dano de ataque, quantidade de vida, bonus e custo. Essas cartas ficam disponíveis para o jogador e é possível escolher individualmente e montar um deck para jogar contra um NPC (um personagem não jogável). O objetivo do jogo é que o jogador consiga um conjunto de cartas fortes o suficiente para derrotar o NPC mais forte, vencendo todos os níveis disponíveis no jogo. 
 
 # Teclogias utilizadas no desenvolvimento do jogo 
 	1. Linguagem Java
