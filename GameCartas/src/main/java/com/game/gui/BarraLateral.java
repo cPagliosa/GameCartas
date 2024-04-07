@@ -35,25 +35,25 @@ public class BarraLateral extends javax.swing.JPanel {
         btn_Inv = new javax.swing.JButton();
         btn_Sair = new javax.swing.JButton();
 
-        jPanel1.setBackground(new java.awt.Color(96, 153, 102));
-        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 5, new java.awt.Color(64, 81, 59)));
+        jPanel1.setBackground(new java.awt.Color(49, 54, 63));
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 5, new java.awt.Color(34, 40, 49)));
 
-        lbl_ImgUsuario.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(64, 81, 59), 5, true));
+        lbl_ImgUsuario.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(34, 40, 49), 5, true));
 
-        lbl_Username.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lbl_Username.setForeground(new java.awt.Color(237, 241, 214));
+        lbl_Username.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        lbl_Username.setForeground(new java.awt.Color(238, 238, 238));
         lbl_Username.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_Username.setText("UserName");
-        lbl_Username.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 5, 0, new java.awt.Color(64, 81, 59)));
+        lbl_Username.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 5, 0, new java.awt.Color(34, 40, 49)));
 
-        btn_Inv.setBackground(new java.awt.Color(96, 153, 102));
-        btn_Inv.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btn_Inv.setForeground(new java.awt.Color(237, 241, 214));
+        btn_Inv.setBackground(new java.awt.Color(118, 171, 174));
+        btn_Inv.setFont(new java.awt.Font("Rockwell", 0, 18)); // NOI18N
+        btn_Inv.setForeground(new java.awt.Color(238, 238, 238));
         btn_Inv.setText("Inventario");
 
-        btn_Sair.setBackground(new java.awt.Color(96, 153, 102));
-        btn_Sair.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btn_Sair.setForeground(new java.awt.Color(237, 241, 214));
+        btn_Sair.setBackground(new java.awt.Color(118, 171, 174));
+        btn_Sair.setFont(new java.awt.Font("Rockwell", 0, 18)); // NOI18N
+        btn_Sair.setForeground(new java.awt.Color(238, 238, 238));
         btn_Sair.setText("Sair");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

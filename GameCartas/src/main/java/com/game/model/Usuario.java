@@ -3,23 +3,21 @@ package com.game.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
-/**
- *
- * @author caiop
- */
-public class Usuario implements Serializable{
-    
+//classe para se cadastrar o usuario
+public class Usuario implements Serializable {
+
     private String nome;
     private String email;
     private String senha;
     private int raca;
-    
-    private ArrayList<Cartas> inventario = new ArrayList<>(30);
-    private Queue<Cartas> deck = new LinkedList<Cartas>();
 
-    public Usuario(String nome, String email, String senha, int raca, ArrayList<Cartas> inventario,Queue<Cartas> deck) {
+    private ArrayList<Cartas> inventario = new ArrayList<>(30);
+    private List<Cartas> deck = new LinkedList<Cartas>();
+
+    public Usuario(String nome, String email, String senha, int raca, ArrayList<Cartas> inventario, List<Cartas> deck) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
@@ -30,8 +28,6 @@ public class Usuario implements Serializable{
 
     public Usuario() {
     }
-    
-    
 
     public String getNome() {
         return nome;
@@ -73,15 +69,12 @@ public class Usuario implements Serializable{
         this.inventario = inventario;
     }
 
-    public Queue<Cartas> getDeck() {
-        return deck;
-    }
-
-    public void setDeck(Queue<Cartas> deck) {
+    public void setDeck(List<Cartas> deck) {
         this.deck = deck;
     }
 
-    
-    
-    
+    public List<Cartas> getDeck() {
+        return deck;
+    }
+
 }

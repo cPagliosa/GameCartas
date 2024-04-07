@@ -45,9 +45,9 @@ public class MapaMundi extends javax.swing.JPanel {
         jDesktopPane1.setMaximumSize(new java.awt.Dimension(1200, 720));
         jDesktopPane1.setMinimumSize(new java.awt.Dimension(1200, 720));
 
-        btn_Nivel1.setBackground(new java.awt.Color(96, 153, 102));
-        btn_Nivel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btn_Nivel1.setForeground(new java.awt.Color(237, 241, 214));
+        btn_Nivel1.setBackground(new java.awt.Color(49, 54, 63));
+        btn_Nivel1.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        btn_Nivel1.setForeground(new java.awt.Color(238, 238, 238));
         btn_Nivel1.setText("Nivel 1");
 
         jDesktopPane1.setLayer(btn_Nivel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -57,32 +57,31 @@ public class MapaMundi extends javax.swing.JPanel {
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(289, 289, 289)
-                .addComponent(btn_Nivel1)
+                .addGap(282, 282, 282)
+                .addComponent(btn_Nivel1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
                 .addContainerGap(568, Short.MAX_VALUE)
-                .addComponent(btn_Nivel1)
-                .addGap(120, 120, 120))
+                .addComponent(btn_Nivel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(111, 111, 111))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
                 .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         getAccessibleContext().setAccessibleName("1000");

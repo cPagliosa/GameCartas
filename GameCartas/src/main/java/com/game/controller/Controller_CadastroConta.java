@@ -5,7 +5,6 @@
 package com.game.controller;
 
 import com.game.gui.Cadastro_Conta;
-import com.game.gui.Login;
 import com.game.model.Cartas;
 import com.game.model.Usuario;
 import java.awt.event.ActionEvent;
@@ -15,11 +14,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.LinkedList;
-import java.util.Queue;
+import java.util.List;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.management.Query;
 import javax.swing.JOptionPane;
 
 /**
@@ -27,21 +25,26 @@ import javax.swing.JOptionPane;
  * @author caiop
  */
 public class Controller_CadastroConta implements ActionListener {
+//jpainel que este controller controla
 
     private Cadastro_Conta cad = new Cadastro_Conta();
+    //outros controllers para fazer trocas de telas
     private Controller_Login log;
 
+    //Contrutor da classe
     public Controller_CadastroConta() {
 
-        //Pegar os botoes para poder controlar as acoes
+        //chama os botoes dp jpainel para o controlher conseguir reconhecer
         this.cad.getBtn_Entrar().addActionListener(this);
         this.cad.getBtn_Limpar().addActionListener(this);
         this.cad.getBtn_Voltar().addActionListener(this);
     }
+//Para poder chamar o jPainel para a tela
 
     public Cadastro_Conta getCad() {
         return cad;
     }
+//metado responsavel de limpar dos os campos e setar o defalt
 
     private void limpar() {
         this.cad.getTxt_Usuario().setText(null);
@@ -50,6 +53,7 @@ public class Controller_CadastroConta implements ActionListener {
         this.cad.getTxt_Email().setText(null);
         this.cad.getCbox_Raca().setSelectedIndex(0);
     }
+//metado responsavel por salvar a lista de usuarios cadastrados
 
     private void salvar() {
         try {
@@ -61,8 +65,8 @@ public class Controller_CadastroConta implements ActionListener {
 
             Usuario conta = new Usuario(
                     this.cad.getTxt_Usuario().getText(),
-                    this.cad.getTxt_Email().getText(), 
-                    String.valueOf(this.cad.getTxt_Senha2().getText()), 
+                    this.cad.getTxt_Email().getText(),
+                    String.valueOf(this.cad.getTxt_Senha2().getText()),
                     this.cad.getCbox_Raca().getSelectedIndex(),
                     null,
                     this.gerarCartasIniciais());
@@ -81,26 +85,28 @@ public class Controller_CadastroConta implements ActionListener {
             Logger.getLogger(Controller_CadastroConta.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+//metado responsavel por gerar as 3 primeiras carta do usuario para poder jogar
 
-    private Queue gerarCartasIniciais(){
+    private List gerarCartasIniciais() {
         Random random = new Random();
-        Queue<Cartas> deck = new LinkedList<Cartas>();
+        List<Cartas> deck = new LinkedList<Cartas>();
         for (int i = 0; i < 3; i++) {
-        int id = random.nextInt(Controller_Main.cartas.size());
+            int id = random.nextInt(Controller_Main.cartas.size());
             for (Cartas cart : Controller_Main.cartas) {
-                if(id == cart.getId()){
-                    deck.offer(cart);
+                if (id == cart.getId()) {
+                    deck.add(cart);
                 }
             }
         }
         return deck;
     }
-    
+//metado responsavel por juntar as verificacoes e permitir o cadastro     
+
     private void tratamento() {
         if (this.validUsuario()) {
             if (this.validSenha()) {
                 if (this.validEmail(this.cad.getTxt_Email().getText())) {
-                    int resposta = JOptionPane.showInternalConfirmDialog(null, "Voce tem certeza que quer salvar com estes daods?\nUsuario: "+this.cad.getTxt_Usuario().getText()+"\nSenha: "+this.cad.getTxt_Senha2().getText()+"\nEmail: "+this.cad.getTxt_Email().getText()+"\nraca: "+String.valueOf(this.cad.getCbox_Raca().getSelectedItem()));
+                    int resposta = JOptionPane.showInternalConfirmDialog(null, "Voce tem certeza que quer salvar com estes daods?\nUsuario: " + this.cad.getTxt_Usuario().getText() + "\nSenha: " + this.cad.getTxt_Senha2().getText() + "\nEmail: " + this.cad.getTxt_Email().getText() + "\nraca: " + String.valueOf(this.cad.getCbox_Raca().getSelectedItem()));
 // Verificar qual botão foi pressionado pelo usuário
                     if (resposta == JOptionPane.YES_OPTION) {
                         // O usuário clicou em "Sim" ou "OK"
@@ -115,13 +121,14 @@ public class Controller_CadastroConta implements ActionListener {
                         // O usuário fechou a caixa de diálogo sem fazer uma escolha
                         this.limpar();
                     }
-                    
+
                 } else {
                     JOptionPane.showMessageDialog(null, "Email invalido", "Erro Email", JOptionPane.ERROR_MESSAGE);
                 }
             }
         }
     }
+//metado responsavel por validar a entrada do usuario
 
     private boolean validUsuario() {
         if (this.cad.getTxt_Usuario().getText().length() >= 3 && this.cad.getTxt_Usuario().getText().length() <= 12) {
@@ -131,6 +138,7 @@ public class Controller_CadastroConta implements ActionListener {
             return false;
         }
     }
+//metado responsavel por validar a entrada da senha
 
     private boolean validSenha() {
         if (this.cad.getTxt_Senha1().getText().length() >= 3) {
@@ -145,6 +153,7 @@ public class Controller_CadastroConta implements ActionListener {
             return false;
         }
     }
+//metado responsavel por validar a entrada do email
 
     private boolean validEmail(String email) {
         // Expressão regular para verificar o formato do email
@@ -152,15 +161,16 @@ public class Controller_CadastroConta implements ActionListener {
         return email.matches(emailRegex);
     }
 
+    //se tivet um evento como clicar ira ativar este metado
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.cad.getBtn_Limpar()) {
             this.limpar();
         } else if (e.getSource() == this.cad.getBtn_Entrar()) {
             this.tratamento();
-        }else if (e.getSource() == this.cad.getBtn_Voltar()) {
+        } else if (e.getSource() == this.cad.getBtn_Voltar()) {
             log = new Controller_Login();
-             Main.main.trocarTelas(log.getLog());
+            Main.main.trocarTelas(log.getLog());
         }
     }
 
