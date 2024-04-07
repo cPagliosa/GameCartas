@@ -1,0 +1,17 @@
+Relatório dos dias
+
+22/03/24 - Foi decidido que faríamos um jogo de cartas medieval e que o Caio ficaria responsável pelo beck e a Laís pela as Interfaces Gráficas e de o designer das cartas
+
+25/03/24 - Lais criou as telas de login e de cadastro.
+
+26/03/24 - Caio iniciou a implementação das classes usuario e cartas e os controllers da telas de login e cadastro. Laís começa a fazer os testes unitários. 
+
+29/03/24 - Lais criou as telas barraLateral, mapaMundi e mapaNivel1.Caio termina as implementações do dia 26/03 e começa a fazer os controllers das novas telas.
+
+31/03/24 - Lais criou a tela de batalha e continua a fazer os testes unitários. Caio terminar de implementar os controllers e começa a fazer o controller da tela de batalha
+
+03/04/24 - Lais termina os testes unitários e dá uma modificada em todas as telas. Caio continua a implementar o controller da batalha
+
+06/04/24 - Laís começa a fazer as imagens das cartas
+
+07/04/24 - Caio termina a implementação do controller da batalha. Lais ainda continua fazendo as cartas. 
